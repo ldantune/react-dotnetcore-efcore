@@ -1,11 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using ProAtividade.API.Models;
-
-namespace ProAtividade.API.Data
+namespace ProAtividade.Data.Context
 {
     public class DataContext : DbContext
     {
