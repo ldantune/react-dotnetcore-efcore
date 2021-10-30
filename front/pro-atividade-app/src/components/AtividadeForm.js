@@ -46,73 +46,69 @@ export default function AtividadeForm(props) {
   }
   return (
     <>
-    <h1>Atividade {atividade.id !== 0 ? atividade.id : ''}</h1>
-    <form className="row g-3" onSubmit={handleSubmit}>
-      <div className="col-md-6">
-        <label className="form-label">Título</label>
-        <input
-          name="titulo"
-          value={atividade.titulo}
-          onChange={inputTextHandler}
-          type="text"
-          className="form-control"
-          id="titulo"
-        />
-      </div>
-      <div className="col-md-6">
-        <label className="form-label">Prioridade</label>
-        <select
-          name="prioridade"
-          value={atividade.prioridade}
-          onChange={inputTextHandler}
-          id="prioridade"
-          className="form-select"
-        >
-          <option value="NaoDefinido">Selecione</option>
-          <option value="Baixa">Baixa</option>
-          <option value="Normal">Normal</option>
-          <option value="Alta">Alta</option>
-        </select>
-      </div>
-
-      <div className="col-md-12">
-        <label className="form-label">Descrição</label>
-        <textarea
-          name="descricao"
-          value={atividade.descricao}
-          onChange={inputTextHandler}
-          type="text"
-          className="form-control"
-          id="descricao"
-        />
-      <hr />
-      </div>
-      <div className="col-12 mt-0">
-        {atividade.id === 0 ? (
-          <button
-            className="btn btn-outline-secondary"
-            type="submit"
+      <form className="row g-3" onSubmit={handleSubmit}>
+        <div className="col-md-6">
+          <label className="form-label">Título</label>
+          <input
+            name="titulo"
+            value={atividade.titulo}
+            onChange={inputTextHandler}
+            type="text"
+            className="form-control"
+            id="titulo"
+          />
+        </div>
+        <div className="col-md-6">
+          <label className="form-label">Prioridade</label>
+          <select
+            name="prioridade"
+            value={atividade.prioridade}
+            onChange={inputTextHandler}
+            id="prioridade"
+            className="form-select"
           >
-            <i className="fas fa-plus me-2"></i>
-            Atividade
-          </button>
-        ) : (
-          <>
-            <button className="btn btn-outline-success me-2" type="submit">
-            <i className="fas fa-plus me-2"></i>
+            <option value="NaoDefinido">Selecione</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Normal">Normal</option>
+            <option value="Alta">Alta</option>
+          </select>
+        </div>
+
+        <div className="col-md-12">
+          <label className="form-label">Descrição</label>
+          <textarea
+            name="descricao"
+            value={atividade.descricao}
+            onChange={inputTextHandler}
+            type="text"
+            className="form-control"
+            id="descricao"
+          />
+          <hr />
+        </div>
+        <div className="col-12 mt-0">
+          {atividade.id === 0 ? (
+            <button className="btn btn-outline-success" type="submit">
+              <i className="fas fa-plus me-2"></i>
               Salvar
             </button>
-            <button
-              className="btn btn-outline-warning"
-              onClick={handleCancelar}
-            >
-              <i className="fas fa-plus me-2"></i>
-              Cancelar
-            </button>
-          </>
-        )}
-      </div>
-    </form>
+          ) : (
+            <>
+              <button className="btn btn-outline-success me-2" type="submit">
+                <i className="fas fa-plus me-2"></i>
+                Salvar
+              </button>
+              <button
+                className="btn btn-outline-warning"
+                onClick={handleCancelar}
+              >
+                <i className="fas fa-plus me-2"></i>
+                Cancelar
+              </button>
+            </>
+          )}
+        </div>
+      </form>
     </>
   );
 }
