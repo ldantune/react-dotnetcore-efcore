@@ -6,10 +6,10 @@ using ProAtividade.Domain.Entities;
 
 namespace ProAtividade.Domain.Interfaces.Repositories
 {
-    public interface IAtividadeRepository
+    public interface IAtividadeRepository : IGeralRepository
     {
         Task<Atividade[]> PegaTodasAsync();
-        Task<Atividade> PegaPorIdAsync();
-        Task<Atividade> PegaPorTituloAsync();
+        Task<Atividade> PegaPorIdAsync(int id);
+        Task<Atividade> PegaPorTituloAsync(string titulo);
     }
 }
