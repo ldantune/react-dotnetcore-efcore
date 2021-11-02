@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import {Button, Modal} from 'react-bootstrap';
-import AtividadeForm from './components/AtividadeForm';
-import AtividadeLista from './components/AtividadeLista';
 import api from './api/atividade';
+import AtividadeLista from './pages/atividades/AtividadeLista';
+import AtividadeForm from './pages/atividades/AtividadeForm';
 
 function App() {
   const [showAtividadeModal, setShowAtividadeModal] = useState(false);
