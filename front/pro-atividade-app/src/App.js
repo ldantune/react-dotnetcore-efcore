@@ -4,6 +4,7 @@ import {Button, Modal} from 'react-bootstrap';
 import api from './api/atividade';
 import AtividadeLista from './pages/atividades/AtividadeLista';
 import AtividadeForm from './pages/atividades/AtividadeForm';
+import TitlePage from './components/TitlePage';
 
 function App() {
   const [showAtividadeModal, setShowAtividadeModal] = useState(false);
@@ -82,14 +83,12 @@ function App() {
 
   return (
     <>
-      <div className="d-flex justify-content-between align-items-end mt-2 pb-3 border-bottom border-1">
-        <h1 className="m-0 p-0">
-          Atividade {atividade.id !== 0 ? atividade.id : ""}
-        </h1>
-        <Button variant="outline-secondary" onClick={novaAtividade}>
+    <TitlePage title={'Atividade ' + (atividade.id !== 0 ? atividade.id : "")}>
+    <Button variant="outline-secondary" onClick={novaAtividade}>
           <i className="fas fa-plus"></i>
         </Button>
-      </div>
+      </TitlePage>
+      
 
       <AtividadeLista
         atividades={atividades}
