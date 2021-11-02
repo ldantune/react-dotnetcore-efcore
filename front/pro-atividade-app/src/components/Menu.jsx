@@ -1,15 +1,16 @@
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 export default function Menu() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">Ativy</Navbar.Brand>
+                <Navbar.Brand activeClassName='active'  as={NavLink} to="/">Ativy</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Clientes</Nav.Link>
-                        <Nav.Link href="#link">Atividades</Nav.Link>
+                        <Nav.Link activeClassName='active' as={NavLink} to="/clientes">Clientes</Nav.Link>
+                        <Nav.Link activeClassName='active'  as={NavLink} to="/atividades">Atividades</Nav.Link>
                     </Nav>
                     <Nav>
                         <NavDropdown align="end" title="Lucas" id="basic-nav-dropdown">
